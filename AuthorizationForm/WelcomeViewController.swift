@@ -8,31 +8,30 @@
 import UIKit
 
 final class WelcomeViewController: UIViewController {
-
-    @IBOutlet var gradientView: UIView!
     
     @IBOutlet var userNameLabel: UILabel!
     
     var userName: String!
-    
+        
     override func viewDidLoad() {
         super.viewDidLoad()
-        setGradient()
+        view.setGradient()
         greeting()
     }
     
     private func greeting() {
-        userNameLabel.text = "Welcome, " + (userName ?? "") + "!"
+        userNameLabel.text = "Welcome, \(userName ?? "")!"
     }
-    
-    private func setGradient() {
+}
+
+extension UIView {
+    func setGradient() {
         let gradient: CAGradientLayer = CAGradientLayer()
         gradient.colors = [UIColor.red.cgColor, UIColor.blue.cgColor]
         gradient.locations = [0.0 , 1.0]
         gradient.startPoint = CGPoint(x: 0.0, y: 1.0)
         gradient.endPoint = CGPoint(x: 1.0, y: 1.0)
-        gradient.frame = gradientView.layer.frame
-        gradientView.layer.insertSublayer(gradient, at: 0)
+        gradient.frame = bounds
+        layer.insertSublayer(gradient, at: 0)
     }
 }
-

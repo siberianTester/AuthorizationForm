@@ -26,8 +26,9 @@ final class LoginViewController: UIViewController {
         guard userNameTextField.text == userName, passwordTextField.text == password else {
             showAlert(
                 withTitle: "Invalid login or password",
-                andMessage: "Please, enter your correct login and password"
-            )
+                andMessage: "Please, enter your correct login and password") {
+                self.passwordTextField.text = ""
+            }
             return false
         }
         return true
@@ -46,11 +47,10 @@ final class LoginViewController: UIViewController {
         }
     }
     
-    private func showAlert(withTitle title: String, andMessage message: String) {
+    private func showAlert(withTitle title: String, andMessage message: String, completion: (() -> Void)? = nil) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         let okAction = UIAlertAction(title: "OK", style: .default) { _ in
-            self.userNameTextField.text = ""
-            self.passwordTextField.text = ""
+            completion?()
         }
         alert.addAction(okAction)
         present(alert, animated: true)
