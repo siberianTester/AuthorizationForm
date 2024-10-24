@@ -12,6 +12,7 @@ final class WelcomeViewController: UIViewController {
     @IBOutlet var userNameLabel: UILabel!
     
     var userName: String!
+    var firstName: String!
         
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,7 +21,7 @@ final class WelcomeViewController: UIViewController {
     }
     
     private func greeting() {
-        userNameLabel.text = "Welcome, \(userName ?? "")!"
+        userNameLabel.text = "Welcome, \(userName ?? "")!\n My name is \(firstName ?? "")"
     }
 }
 
