@@ -11,8 +11,7 @@ final class WelcomeViewController: UIViewController {
     
     @IBOutlet var userNameLabel: UILabel!
     
-    var userName: String!
-    var firstName: String!
+    var user: User!
         
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,8 +19,12 @@ final class WelcomeViewController: UIViewController {
         greeting()
     }
     
+    @IBAction func logoutAction() {
+        dismiss(animated: true)
+    }
+    
     private func greeting() {
-        userNameLabel.text = "Welcome, \(userName ?? "")!\n My name is \(firstName ?? "")"
+        userNameLabel.text = "Welcome, \(user.userName)!\n My name is \(user.person.firstName)"
     }
 }
 

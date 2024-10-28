@@ -15,19 +15,15 @@ final class HobbieInfoViewController: UIViewController {
     @IBOutlet var cookingLabel: UILabel!
     @IBOutlet var animalLabel: UILabel!
     
-    var learning: String!
-    var sport: String!
-    var travel: String!
-    var cooking: String!
-    var animal: String!
+    var user: User!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         view.setGradient()
-        learningLabel.text = learning
-        sportLabel.text = sport
-        travelLabel.text = travel
-        cookingLabel.text = cooking
-        animalLabel.text = animal
+        learningLabel.text = user.person.learning
+        sportLabel.text = user.person.sport
+        travelLabel.text = user.person.travel
+        cookingLabel.text = user.person.cooking
+        animalLabel.text = user.person.animal
     }
 }

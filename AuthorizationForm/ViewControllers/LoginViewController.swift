@@ -43,8 +43,10 @@ final class LoginViewController: UIViewController {
         
         tabBarVC?.viewControllers?.forEach { viewController in
             if let welcomeVC = viewController as? WelcomeViewController {
-                welcomeVC.userName = user.userName
-                welcomeVC.firstName = user.person.firstName
+                welcomeVC.user = user
+            } else if let navigationVC = viewController as? UINavigationController {
+                let aboutMeVC = navigationVC.topViewController as? AboutMeViewController
+                aboutMeVC?.user = user
             }
         }
     }
@@ -75,6 +77,5 @@ final class LoginViewController: UIViewController {
 //        userNameTextField.text = ""
 //        passwordTextField.text = ""
 //    }
-    
 }
 

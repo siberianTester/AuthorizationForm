@@ -9,7 +9,7 @@ import UIKit
 
 final class AboutMeViewController: UIViewController {
 
-    @IBOutlet var photoImageView: UIImageView!
+    @IBOutlet var photoImage: UIImageView!
     
     @IBOutlet var firstNameLabel: UILabel!
     @IBOutlet var lastNameLabel: UILabel!
@@ -18,29 +18,25 @@ final class AboutMeViewController: UIViewController {
     @IBOutlet var companyLabel: UILabel!
     @IBOutlet var positionLabel: UILabel!
     
-    private let person = Person.getPerson()
+    var user: User!
     
     override func viewDidLayoutSubviews() {
-        photoImageView.layer.cornerRadius = photoImageView.frame.width / 2
+        photoImage.layer.cornerRadius = photoImage.frame.width / 2
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         view.setGradient()
-        firstNameLabel.text = person.firstName
-        lastNameLabel.text = person.lastName
-        ageLabel.text = String(person.age)
-        cityLabel.text = person.city
-        companyLabel.text = person.company
-        positionLabel.text = person.position
+        firstNameLabel.text = user.person.firstName
+        lastNameLabel.text = user.person.lastName
+        ageLabel.text = String(user.person.age)
+        cityLabel.text = user.person.city
+        companyLabel.text = user.person.company
+        positionLabel.text = user.person.position
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let hobbieInfoVC = segue.destination as? HobbieInfoViewController
-        hobbieInfoVC?.learning = person.learning
-        hobbieInfoVC?.sport = person.sport
-        hobbieInfoVC?.travel = person.travel
-        hobbieInfoVC?.cooking = person.cooking
-        hobbieInfoVC?.animal = person.animal
+        hobbieInfoVC?.user = user
     }
 }

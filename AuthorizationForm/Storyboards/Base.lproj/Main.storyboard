@@ -18,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="P5R-fV-ho3">
-                                <rect key="frame" x="36" y="200" width="342" height="180.5"/>
+                                <rect key="frame" x="36" y="248" width="342" height="180.5"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="rUc-aI-SrR">
                                         <rect key="frame" x="0.0" y="0.0" width="342" height="152.5"/>
@@ -103,7 +103,7 @@
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" title="Log out"/>
                                 <connections>
-                                    <segue destination="BYZ-38-t0r" kind="presentation" modalPresentationStyle="fullScreen" id="abh-Ae-Gxz"/>
+                                    <action selector="logoutAction" destination="tN1-fO-oUA" eventType="touchUpInside" id="gIa-aD-lG4"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome," textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="u4f-fh-HW8">
@@ -149,7 +149,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XZk-gl-Maz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="381" y="700"/>
+            <point key="canvasLocation" x="354" y="743"/>
         </scene>
         <!--Yaroslav Malygin-->
         <scene sceneID="H8O-RY-tQt">
@@ -298,13 +298,13 @@
                         <outlet property="companyLabel" destination="Vqe-4a-aA0" id="nQC-jf-uSP"/>
                         <outlet property="firstNameLabel" destination="LZk-r6-NxH" id="0R0-KJ-KwG"/>
                         <outlet property="lastNameLabel" destination="F2A-j7-NBK" id="Mht-0H-hD5"/>
-                        <outlet property="photoImageView" destination="QKT-nK-tNz" id="gan-yt-8Yr"/>
+                        <outlet property="photoImage" destination="QKT-nK-tNz" id="XEa-L8-i6Y"/>
                         <outlet property="positionLabel" destination="Qxg-D8-QeT" id="vwU-2Q-1Sk"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AK8-Cj-Duy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1927.5" y="699.29577464788736"/>
+            <point key="canvasLocation" x="1943" y="743"/>
         </scene>
         <!--My hobbies-->
         <scene sceneID="Nnc-uk-gKR">
@@ -369,12 +369,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FMs-cB-IaC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2649.375" y="699.29577464788736"/>
+            <point key="canvasLocation" x="2739" y="743"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="hgu-Uh-Anb">
             <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="iUl-T1-9ho" sceneMemberID="viewController">
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="iUl-T1-9ho" customClass="TabBarController" customModule="AuthorizationForm" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" itemPositioning="centered" id="ZQU-BO-8kJ">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
@@ -420,7 +420,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AwJ-ye-gQb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1158" y="700"/>
+            <point key="canvasLocation" x="1162" y="743"/>
         </scene>
     </scenes>
     <resources>

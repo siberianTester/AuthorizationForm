@@ -5,13 +5,19 @@
 //  Created by Yaroslav Malygin on 22.10.2024.
 //
 
+import Foundation
+
 struct User {
     let userName: String
     let password: String
     let person: Person
     
     static func getUser() -> User {
-        User(userName: "admin", password: "1111", person: Person.getPerson())
+        User(
+            userName: "admin",
+            password: "1111",
+            person: Person.getPerson()
+        )
     }
 }
 
